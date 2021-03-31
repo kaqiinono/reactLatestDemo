@@ -1,0 +1,6 @@
+@import '../../../utils/style/variables';
+
+.ellipse {
+    @extend %word-ellipse;
+    //max-width: 200px;
+}

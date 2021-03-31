@@ -1,0 +1,19 @@
+.main {
+    display: flex;
+    background-color: #ffffff;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 350px;
+        height: 150px;
+    }
+
+    p {
+        font-size: 14px;
+        color: #666666;
+        text-align: center;
+        font-family: PingFangSC-Regular;
+    }
+}

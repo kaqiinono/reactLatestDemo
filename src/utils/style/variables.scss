@@ -1,0 +1,27 @@
+%errorStyle {
+    word-break: break-all;
+    font-size: 12px;
+    color: #e62e2f;
+    z-index: 1;
+}
+
+%disabledStyle {
+    cursor: not-allowed;
+    background-color: rgba(227, 227, 227, 1);
+    pointer-events: none;
+    color: #666666;
+}
+
+%word-ellipse {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    //display: inline-block;
+    //vertical-align: middle;
+    //width: auto;
+    //max-width: 100px;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
+    //white-space: nowrap;
+}

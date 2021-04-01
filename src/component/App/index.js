@@ -53,7 +53,7 @@ const consoleText = (target, words, id, colors) => {
 const App = () => {
     const showSpanEl = useRef(null);
     useEffect(() => {
-        consoleText(showSpanEl.current, ['Hello World.', 'Console Text', 'Made with Love.'], 'text', [
+        consoleText(showSpanEl.current, ['I LOVE YOU'], 'text', [
             'tomato',
             'rebeccapurple',
             'lightblue'

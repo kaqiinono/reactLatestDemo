@@ -2,7 +2,7 @@ import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import routes from './constant';
 import store from '../redux/lib/store';
-import ErrorBoundary from '../component/Common/ErrorBoundary';
+// import ErrorBoundary from '../component/Common/ErrorBoundary';
 
 const defaultUrl = '/activity/list';
 
@@ -24,12 +24,12 @@ export default function RouteConfig() {
     return (
         <Provider store={store}>
             <Router>
-                <ErrorBoundary>
+                {/* <ErrorBoundary> */}
                     <Switch>
                         {getRoutes(routes)}
                         <Route render={() => <Redirect to={defaultUrl} />} />
                     </Switch>
-                </ErrorBoundary>
+                {/* </ErrorBoundary> */}
             </Router>
         </Provider>
     );

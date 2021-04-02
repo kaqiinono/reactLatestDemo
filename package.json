@@ -1,6 +1,6 @@
 {
   "name": "datadriver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "数坊数据看板",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
     "analyze": "source-map-explorer 'dist/js/*.js'",
     "lint": "eslint --quiet  --cache --ext .jsx,.js --fix ./src",
     "fix": "prettier --write  ./src",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "init": "standard-version -- --first-release"
   },
   "keywords": [],
   "author": "",

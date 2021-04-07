@@ -1,7 +1,7 @@
 {
-  "name": "datadriver",
+  "name": "projectname",
   "version": "1.0.1",
-  "description": "数坊数据看板",
+  "description": "description",
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --open --config webpack/webpack.dev.js --progress",
@@ -9,7 +9,7 @@
     "test": "webpack serve --open --config webpack/webpack.dev.js --env production --progress",
     "release": "bash script/release.sh",
     "analyse": "webpack --config webpack/webpack.config.js --profile --json>stats.json",
-    "analyze": "source-map-explorer 'dist/js/*.js'",
+    "analyze": "source-map-explorer dist/js/*.js",
     "lint": "eslint --quiet  --cache --ext .jsx,.js --fix ./src",
     "fix": "prettier --write  ./src",
     "precommit": "lint-staged",
@@ -29,6 +29,7 @@
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "@jd/react-grace": "^2.3.0",
+    "@tsconfig/recommended": "^1.0.1",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.9.1",
@@ -61,13 +62,14 @@
     "source-map-explorer": "^2.5.2",
     "standard-version": "^9.1.1",
     "style-loader": "^2.0.0",
+    "ts-loader": "^8.1.0",
+    "typescript": "^4.2.3",
     "webpack": "^5.24.4",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "@jd/dmframe": "^6.0.13",
     "@jd/jmtd": "^1.19.0-alpha.0",
     "@jd/jmtd-charts": "^3.2.17-alpha.17",
     "@jd/jmtd-pro": "^1.18.0",
@@ -130,7 +132,7 @@
     }
   },
   "standard-version": {
-    "changelogHeader": "# Custom Header",
+    "changelogHeader": "# Change Log",
     "types": [
       {
         "type": "feat",

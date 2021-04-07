@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import './index.scss';
 
-const consoleText = (target, words, id, colors) => {
+const consoleText = (targetElement, words, id, colors) => {
+    const target = targetElement;
     if (colors === undefined) {
         // eslint-disable-next-line no-param-reassign
         colors = ['#fff'];

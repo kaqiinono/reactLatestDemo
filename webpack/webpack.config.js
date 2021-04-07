@@ -5,10 +5,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
+const include = [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../node_modules/@jd')];
+
 module.exports = env => {
     const plugins = [
         new HtmlWebpackPlugin({
-            title: '驾驶舱',
+            title: 'DEMO',
             template: path.resolve(__dirname, '../public/index.html'),
             filename: 'index.html',
             minify: {
@@ -45,7 +47,7 @@ module.exports = env => {
                 {
                     test: /\.(js|jsx)$/,
                     // include: /(src)|(node_modules\/@jd)/,
-                    include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../node_modules/@jd')],
+                    include,
                     use: {
                         loader: 'babel-loader',
                         options: {
@@ -53,11 +55,16 @@ module.exports = env => {
                         }
                     }
                 },
+                {
+                    test: /\.tsx?$/,
+                    loader: 'ts-loader',
+                    include: path.resolve(__dirname, '../src')
+                },
                 // 处理图片资源
                 {
                     test: /\.(png|jpg|jpeg|gif|svg)$/i,
                     // include: /(src)|(entry)|(node_modules\/@jd)/,
-                    include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../node_modules/@jd')],
+                    include,
                     type: 'asset/resource',
                     parser: {
                         dataUrlCondition: {
@@ -71,7 +78,7 @@ module.exports = env => {
                 // 处理字体文件
                 {
                     test: /\.(eot|ttf|woof|woof2|woff)$/i,
-                    include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../node_modules/@jd')],
+                    include,
                     type: 'asset/resource',
                     generator: {
                         filename: 'static/fonts/[name][ext][query]'
@@ -80,7 +87,7 @@ module.exports = env => {
             ]
         },
         resolve: {
-            extensions: ['.js', '.jsx', 'css', '.scss'],
+            extensions: ['.tsx', '.ts', '.js', '.jsx', 'css', '.scss'],
             alias: {
                 '@jd/react-grace': '@jd/react-grace/dist/widget/'
             }

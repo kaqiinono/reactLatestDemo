@@ -8,6 +8,7 @@ const common = require('./webpack.config.js');
 const cssLoaderInCommon = require('./common');
 // const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 // const TerserWebpackPlugin = require('terser-webpack-plugin');
+const pkg = require('../package.json');
 
 module.exports = env =>
     merge(common(env), {
@@ -15,7 +16,7 @@ module.exports = env =>
         // devtool: 'inline-source-map',
         output: {
             filename: 'js/[name].[contenthash:8].js',
-            publicPath: '/datadrive/static/',
+            publicPath: `/${pkg.name}/static/`,
             chunkFilename: 'js/[name].[contenthash:8].chunk.js'
         },
         module: {

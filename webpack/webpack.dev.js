@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge');
 const { HotModuleReplacementPlugin } = require('webpack');
 const path = require('path');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const common = require('./webpack.config.js');
 const cssLoaderInCommon = require('./common');
 const { mockServer } = require('../mock');
@@ -57,7 +58,7 @@ module.exports = env =>
                 }
             ]
         },
-        plugins: [new HotModuleReplacementPlugin()],
+        plugins: [new HotModuleReplacementPlugin(), new BundleAnalyzerPlugin()],
         devServer: {
             historyApiFallback: true,
             open: true,

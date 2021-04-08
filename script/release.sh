@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while [[ "$#" > 0 ]]; do case $1 in
+while [[ "$#" -gt 0 ]]; do case $1 in
   -r|--release) release="$2"; shift;;
 #  -b|--branch) branch="$2"; shift;;
   *) echo "Unknown parameter passed: $1"; exit 1;;

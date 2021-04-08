@@ -3,15 +3,15 @@
   "description": "description",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --open --config webpack/webpack.dev.js --progress",
+    "dev": "bash script/husky.sh && webpack serve --open --config webpack/webpack.dev.js --progress",
     "build": "webpack --config webpack/webpack.prod.js --env production --progress",
-    "test": "webpack serve --open --config webpack/webpack.dev.js --env production --progress",
+    "test": "bash script/husky.sh && webpack serve --open --config webpack/webpack.dev.js --env production --progress",
     "release": "bash script/release.sh",
     "lint": "eslint --quiet  --cache --ext .jsx,.js --fix ./src",
     "fix": "prettier --write  ./src",
     "release-init": "standard-version -- --first-release",
     "husky": "husky install",
-    "precommit": "bash script/husky.sh && lint-staged"
+    "precommit": "lint-staged"
   },
   "keywords": [],
   "author": "",
@@ -54,7 +54,6 @@
     "postcss": "^8.2.7",
     "postcss-loader": "^5.1.0",
     "postcss-preset-env": "^6.7.0",
-    "pre-commit": "^1.2.2",
     "prettier": "^2.2.1",
     "sass-loader": "^11.0.1",
     "source-map-explorer": "^2.5.2",

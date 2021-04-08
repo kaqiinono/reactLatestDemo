@@ -11,7 +11,7 @@
     "fix": "prettier --write  ./src",
     "release-init": "standard-version -- --first-release",
     "husky": "husky install",
-    "pre-commit": "bash script/husky.sh && lint-staged"
+    "precommit": "bash script/husky.sh && lint-staged"
   },
   "keywords": [],
   "author": "",

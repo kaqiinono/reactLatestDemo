@@ -6,8 +6,8 @@ const cssLoaderInCommon = require('./common');
 const { mockServer } = require('../mock');
 const { getCSSModuleLocalIdent } = require('./utils');
 
-const port = 8000;
-const host = 'local.datamill.jd.com';
+const port = 3000;
+const host = '127.0.0.1';
 const base = {
     secure: true,
     changeOrigin: true
@@ -52,7 +52,7 @@ module.exports = env =>
                 },
                 {
                     test: /\.s?css$/,
-                    include: path.resolve(__dirname, '../node_modules/@jd'),
+                    include: [path.resolve(__dirname, '../node_modules/@jd'), path.resolve(__dirname, '../node_modules/codemirror')],
                     use: ['style-loader', 'css-loader', ...cssLoaderInCommon]
                 }
             ]

@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import './index.scss';
 
+// const RemoteButton = lazy(() => import('template/Button'));
+
 const consoleText = (target, words, id, colors) => {
     if (colors === undefined) {
         // eslint-disable-next-line no-param-reassign
@@ -15,6 +17,7 @@ const consoleText = (target, words, id, colors) => {
     window.setInterval(function () {
         if (letterCount === 0 && waiting === false) {
             waiting = true;
+            // eslint-disable-next-line no-param-reassign
             target.innerHTML = words[0].substring(0, letterCount);
             window.setTimeout(function () {
                 const usedColor = colors.shift();
@@ -34,6 +37,7 @@ const consoleText = (target, words, id, colors) => {
                 waiting = false;
             }, 1000);
         } else if (waiting === false) {
+            // eslint-disable-next-line no-param-reassign
             target.innerHTML = words[0].substring(0, letterCount);
             letterCount += x;
         }
@@ -53,15 +57,14 @@ const consoleText = (target, words, id, colors) => {
 const App = () => {
     const showSpanEl = useRef(null);
     useEffect(() => {
-        consoleText(showSpanEl.current, ['I LOVE YOU'], 'text', [
-            'tomato',
-            'rebeccapurple',
-            'lightblue'
-        ]);
+        consoleText(showSpanEl.current, ['I LOVE YOU'], 'text', ['tomato', 'rebeccapurple', 'lightblue']);
     });
 
     return (
         <div className="console-container">
+            {/* <Suspense fallback="Loading Button">
+                <RemoteButton />
+            </Suspense> */}
             <span id="text" ref={showSpanEl} />
             <div className="console-underscore" id="console">
                 &#95;

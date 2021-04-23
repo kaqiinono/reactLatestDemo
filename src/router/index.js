@@ -25,10 +25,10 @@ export default function RouteConfig() {
         <Provider store={store}>
             <Router>
                 {/* <ErrorBoundary> */}
-                    <Switch>
-                        {getRoutes(routes)}
-                        <Route render={() => <Redirect to={defaultUrl} />} />
-                    </Switch>
+                <Switch>
+                    {getRoutes(routes)}
+                    <Route render={() => <Redirect to={defaultUrl} />} />
+                </Switch>
                 {/* </ErrorBoundary> */}
             </Router>
         </Provider>

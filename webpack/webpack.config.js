@@ -8,7 +8,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 module.exports = env => {
     const plugins = [
         new HtmlWebpackPlugin({
-            title: '驾驶舱',
+            title: 'ReactLatedtDemo',
             template: path.resolve(__dirname, '../public/index.html'),
             filename: 'index.html',
             minify: {
@@ -45,7 +45,11 @@ module.exports = env => {
                 {
                     test: /\.(js|jsx)$/,
                     // include: /(src)|(node_modules\/@jd)/,
-                    include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../node_modules/@jd')],
+                    include: [
+                        path.resolve(__dirname, '../src'),
+                        path.resolve(__dirname, '../node_modules/@jd'),
+                        path.resolve(__dirname, '../node_modules/codemirror')
+                    ],
                     use: {
                         loader: 'babel-loader',
                         options: {
